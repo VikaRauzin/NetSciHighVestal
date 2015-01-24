@@ -14,6 +14,6 @@ with open(path_in, 'rb') as fin, open(path_out, 'wb') as fout:
 
     header = "Drug ID"  # gephi likes nodelists to have a header row
     fout.writerow(header)
-    for d in drugs.keys().iteritems():  # iterate dictionary keys, can be modified to include frequency
+    for d in drugs.keys():  # iterate dictionary keys, can be modified to include frequency
         row = d
         fout.writerow(row)
