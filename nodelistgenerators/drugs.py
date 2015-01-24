@@ -13,7 +13,7 @@ with open(path_in, 'rb') as fin, open(path_out, 'wb') as fout:
             drugs[line[0]] = 1  # if not in the dictionary, adds it with frequency of 1
 
     header = "Drug ID"  # gephi likes nodelists to have a header row
-    fout.writerow(header)
+    fout.writerow([header])
     for d in drugs.keys():  # iterate dictionary keys, can be modified to include frequency
         row = d
-        fout.writerow(row)
+        fout.writerow([row])
