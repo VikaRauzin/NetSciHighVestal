@@ -22,6 +22,8 @@ with open(path_in, 'rb') as fin, open(path_out, 'wb') as fout:
             else:  # creates key and adds to placebo values
                 edges[e] = 0, 0, line[7], 1
 
+    header = "Source", "Target", "Weight"
+    fout.writerow([header])
     for edge, freq in sorted(set(edges.iteritems())):
         a, b, c, d = float(freq[0]), float(freq[1]), float(freq[2]), float(freq[3])
         if b == 0:
