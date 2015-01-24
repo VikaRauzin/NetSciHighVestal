@@ -22,7 +22,7 @@ with open(path_in, 'rb') as fin, open(path_out, 'wb') as fout:
             else:  # creates key and adds to placebo values
                 edges[e] = 0, 0, line[7], 1
 
-    header = "Source", "Target", "Weight"
+    header = "Source", "Target", "Weight", "Type"
     fout.writerow(header)
     for edge, freq in sorted(set(edges.iteritems())):
         a, b, c, d = float(freq[0]), float(freq[1]), float(freq[2]), float(freq[3])
@@ -33,5 +33,5 @@ with open(path_in, 'rb') as fin, open(path_out, 'wb') as fout:
 
         weight = a / b - c / d  # subtracts mean placebo frequency from mean regular frequency
         if weight > 0:
-            row = edge[0], edge[1], weight
+            row = edge[0], edge[1], weight, "undirected"
             fout.writerow(row)
