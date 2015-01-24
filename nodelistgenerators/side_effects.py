@@ -1,4 +1,6 @@
 import csv
+import os
+os.chdir("..")
 path_in = "meddra_freq_parsed.tsv"
 path_out = "se_nodelist.csv"
 with open(path_in, 'rb') as fin, open(path_out, 'wb') as fout:
@@ -17,4 +19,3 @@ with open(path_in, 'rb') as fin, open(path_out, 'wb') as fout:
     for s in sorted(set(side_effects.keys())):  # iterate dictionary keys, can be modified to include frequency
         row = s
         fout.writerow([row])
-        
