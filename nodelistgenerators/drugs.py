@@ -1,3 +1,5 @@
+# unnecessary because we have an edgelist generator
+
 import csv
 import os
 os.chdir("..")  # moves working directory for data i/o to project master directory
